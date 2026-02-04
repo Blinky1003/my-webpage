@@ -51,10 +51,10 @@
     }
 
     .art {
-      width: min(260px, 80vw);
-      margin: 0 auto 10px;
-      display: block;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
+  width: min(260px, 80vw);
+  margin: 0 auto 10px;
+  display: block;
+  filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
     }
 
     h1 {
@@ -257,14 +257,23 @@
 
     /* ---------- YES CLICK ---------- */
     yesBtn.addEventListener("click", () => {
+  // Hide buttons and hint
   zone.style.display = "none";
-  hint.style.display = "none";     // HIDE THE HINT
-  document.getElementById("valentineImg").style.display = "none"; // HIDE THE ORIGINAL IMAGE
+  hint.style.display = "none";
+
+  // Hide original Valentine image
+  const valentineImg = document.getElementById("valentineImg");
+  valentineImg.style.display = "none";   // removes it from layout
+  valentineImg.style.visibility = "hidden"; // ensures mobile rendering
+
+  // Show result & fireworks
   result.style.display = "block";
   resizeConfettiCanvas();
   fullScreenConfetti();
+});
     });
   </script>
 </body>
 
 </html>
+
