@@ -134,7 +134,7 @@
 
   <main class="card">
     <!-- ANIMAL WITH HEART -->
-    <img class="art" src="images/Valentine-26.png" alt="Cute bear" />
+<img id="valentineImg" class="art" src="images/Valentine-26.png" alt="Cute bear" />
 
     <h1>Tini will you be my Valentine?</h1>
 
@@ -257,12 +257,14 @@
 
     /* ---------- YES CLICK ---------- */
     yesBtn.addEventListener("click", () => {
-      zone.style.display = "none";
-      hint.style.display = "none";     // HIDE THE HINT
-      result.style.display = "block";
-      resizeConfettiCanvas();
-      fullScreenConfetti();
+  zone.style.display = "none";
+  hint.style.display = "none";     // HIDE THE HINT
+  document.getElementById("valentineImg").style.display = "none"; // HIDE THE ORIGINAL IMAGE
+  result.style.display = "block";
+  resizeConfettiCanvas();
+  fullScreenConfetti();
     });
   </script>
 </body>
+
 </html>
